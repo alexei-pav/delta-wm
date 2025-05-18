@@ -29,8 +29,10 @@ static const int statusmon               = 'A';
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
-static const char *fonts[]               = { "monospace:size=10" };
-static const char dmenufont[]            = "monospace:size=10";
+static const char *fonts[]               = { 
+    "CommitMono Nerd Font Mono:style=Bold:size=10" };
+static const char dmenufont[]            = 
+    "CommitMono Nerd Font Mono:style=Regular:size=10";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
