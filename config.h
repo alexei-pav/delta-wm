@@ -34,43 +34,56 @@ static const char *fonts[]               = {
 static const char dmenufont[]            = 
     "CommitMono Nerd Font Mono:style=Regular:size=10";
 
-static char c000000[]                    = "#000000"; // placeholder value
+/* TODO: Macchiato theme */
 
-static char normfgcolor[]                = "#bbbbbb";
-static char normbgcolor[]                = "#222222";
-static char normbordercolor[]            = "#444444";
-static char normfloatcolor[]             = "#db8fd9";
+static char c000000[]                    = "#000000"; /* placeholder value */
 
+/* normal colors */
+static char normfgcolor[]                = "#cad3f5"; /* text */
+static char normbgcolor[]                = "#24273a"; /* base */
+static char normbordercolor[]            = "#363a4f"; /* surface 0 */
+static char normfloatcolor[]             = "#6e738d"; /* overlay 0 */
+
+/* selected colors */
 static char selfgcolor[]                 = "#eeeeee";
 static char selbgcolor[]                 = "#005577";
 static char selbordercolor[]             = "#005577";
 static char selfloatcolor[]              = "#005577";
 
+/* title normal colors */
 static char titlenormfgcolor[]           = "#bbbbbb";
 static char titlenormbgcolor[]           = "#222222";
 static char titlenormbordercolor[]       = "#444444";
 static char titlenormfloatcolor[]        = "#db8fd9";
 
+
+/* title selected colors */
 static char titleselfgcolor[]            = "#eeeeee";
 static char titleselbgcolor[]            = "#005577";
 static char titleselbordercolor[]        = "#005577";
 static char titleselfloatcolor[]         = "#005577";
 
+
+/* tags normal colors */
 static char tagsnormfgcolor[]            = "#bbbbbb";
 static char tagsnormbgcolor[]            = "#222222";
 static char tagsnormbordercolor[]        = "#444444";
 static char tagsnormfloatcolor[]         = "#db8fd9";
 
+
+/* tags selected colors */
 static char tagsselfgcolor[]             = "#eeeeee";
 static char tagsselbgcolor[]             = "#005577";
 static char tagsselbordercolor[]         = "#005577";
 static char tagsselfloatcolor[]          = "#005577";
 
+/* hid(?) normal colors */
 static char hidnormfgcolor[]             = "#005577";
 static char hidselfgcolor[]              = "#227799";
 static char hidnormbgcolor[]             = "#222222";
 static char hidselbgcolor[]              = "#222222";
 
+/* urg(?) colors */
 static char urgfgcolor[]                 = "#bbbbbb";
 static char urgbgcolor[]                 = "#222222";
 static char urgbordercolor[]             = "#ff0000";
