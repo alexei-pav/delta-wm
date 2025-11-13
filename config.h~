@@ -229,6 +229,7 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "xterm", NULL };
+static const char *screenshotcmd[] = { "maim", "-s", "/home/alexei/pics/screenshots/screenshot_$(date +%F_%T).png", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
