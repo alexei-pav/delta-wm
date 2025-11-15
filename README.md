@@ -1,11 +1,13 @@
 # deltaWM
-deltaWM is just fork of dwm with some patches and my configs.
+deltaWM is just fork of dwm with some patches and my configs. For now.
 
 ## Requirements
 - Terminal emulator (XTerm by default)
-- X11 server (tested on XOrg)
+- X11 server (tested on XOrg and XLibre)
 - GNU Make (for building)
 - GCC (not tested with clang)
+- feh for background image (optional)
+- maim for screenshots (optional)
 
 ## Key bindigs (default):
 Mod => "Win" or "Super", usually next to "Alt" key
