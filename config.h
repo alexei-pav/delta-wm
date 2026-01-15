@@ -30,9 +30,9 @@ static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 static const char *fonts[]               = { 
-    "CommitMono Nerd Font Mono:style=Bold:size=10" };
+    "Courier Code:style=Bold:size=10" };
 static const char dmenufont[]            = 
-    "CommitMono Nerd Font Mono:style=Regular:size=10";
+    "Courier Code:style=Regular:size=10";
 
 /* TODO: Macchiato theme */
 
