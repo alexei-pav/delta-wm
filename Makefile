@@ -36,8 +36,9 @@ clean:
 
 dist: clean
 	mkdir -p deltawm-${VERSION}
-	cp -R LICENSE Makefile README config.def.h config.mk\
-		deltawm.1 drw.h util.h ${SRC} deltawm.png transient.c deltawm-${VERSION}
+	cp -R LICENSE Makefile README  README.md config.def.h config.mk\
+		deltawm.1 drw.h util.h ${SRC} deltawm.png transient.c \
+		patch/ startwm.sh deltawm-${VERSION}
 	tar -cf deltawm-${VERSION}.tar deltawm-${VERSION}
 	gzip deltawm-${VERSION}.tar
 	rm -rf deltawm-${VERSION}
@@ -45,10 +46,12 @@ dist: clean
 install: all
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f deltawm ${DESTDIR}${PREFIX}/bin
+	cp -f startwm.sh ${DESTDIR}${PREFIX}/bin
 ifdef YAJLLIBS
 	cp -f deltawm-msg ${DESTDIR}${PREFIX}/bin
 endif
 	chmod 755 ${DESTDIR}${PREFIX}/bin/deltawm
+	chmod 755 ${DESTDIR}${PREFIX}/bin/startwm.sh
 ifdef YAJLLIBS
 	chmod 755 ${DESTDIR}${PREFIX}/bin/deltawm-msg
 endif
