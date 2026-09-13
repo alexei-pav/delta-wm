@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <X11/XF86keysym.h> /* X11 specific keys */
+
 /* Helper macros for spawning commands */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 #define CMD(...)   { .v = (const char*[]){ __VA_ARGS__, NULL } }
@@ -268,14 +270,22 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space,      setlayout,              {0} },
-	{ MODKEY|ShiftMask,             XK_space,      togglefloating,         {0} },
-	{ MODKEY,                       XK_0,          view,                   {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,          tag,                    {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,      focusmon,               {.i = -1 } },
-	{ MODKEY,                       XK_period,     focusmon,               {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,      tagmon,                 {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period,     tagmon,                 {.i = +1 } },
+	{ MODKEY,                       XK_space,      setlayout,              	{0} },
+	{ MODKEY|ShiftMask,             XK_space,      togglefloating,         	{0} },
+	{ MODKEY,                       XK_0,          view,                   	{.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_0,          tag,                    	{.ui = ~0 } },
+	{ MODKEY,                       XK_comma,      focusmon,               	{.i = -1 } },
+	{ MODKEY,                       XK_period,     focusmon,               	{.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_comma,      tagmon,                 	{.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_period,     tagmon,                 	{.i = +1 } },
+	/* ThinkPad specific key bindings */ 
+	{0,                            	XF86XK_AudioRaiseVolume, spawn, 	{.v = (const char*[]) 
+											{"amixer", "set", "Master", "5%+", NULL}} },
+    	{ 0,                            XF86XK_AudioLowerVolume, spawn, 	{.v = (const char*[])
+											{"amixer", "set", "Master", "5%-", NULL}} },
+    	{ 0,                            XF86XK_AudioMute,        spawn, 	{.v = (const char*[])
+											{"amixer", "set", "Master", "toggle", NULL}} },
+	/* tagkeys */
 	TAGKEYS(                        XK_1,                                  0)
 	TAGKEYS(                        XK_2,                                  1)
 	TAGKEYS(                        XK_3,                                  2)
