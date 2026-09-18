@@ -6,6 +6,11 @@ include config.mk
 SRC = drw.c deltawm.c util.c
 OBJ = ${SRC:.c=.o}
 
+DIST = $(SRC) patch/ config.def.h startwm.sh \
+		util.h drw.h LICENSE Makefile README \
+		README.md config.mk deltawm.1 deltawm.desktop \
+		deltawm.png 
+
 # FreeBSD users, prefix all ifdef, else and endif statements with a . for this to work (e.g. .ifdef)
 
 ifdef YAJLLIBS
@@ -36,9 +41,7 @@ clean:
 
 dist: clean
 	mkdir -p deltawm-${VERSION}
-	cp -R LICENSE Makefile README  README.md config.def.h config.mk\
-		deltawm.1 drw.h util.h ${SRC} deltawm.png transient.c \
-		patch/ startwm.sh deltawm-${VERSION}
+	cp -R $(DIST) deltawm-${VERSION}
 	tar -cf deltawm-${VERSION}.tar deltawm-${VERSION}
 	gzip deltawm-${VERSION}.tar
 	rm -rf deltawm-${VERSION}
@@ -46,7 +49,9 @@ dist: clean
 install: all
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f deltawm ${DESTDIR}${PREFIX}/bin
+ifdef INST_STRTWM
 	cp -f startwm.sh ${DESTDIR}${PREFIX}/bin
+endif
 ifdef YAJLLIBS
 	cp -f deltawm-msg ${DESTDIR}${PREFIX}/bin
 endif
